@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <title>Consumindo API</title>
-
-  <!-- Conecta o CSS -->
-  <link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <title>Consumindo API</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <h1>Aplicação SPA com API</h1>
+    <h1>Aplicação SPA com API</h1>
 
-  <p>
-    Clique no botão para buscar usuários.
-  </p>
+    <p>Clique no botão para buscar usuários.</p>
 
-  <!-- Botão que chama a função -->
-  <button onclick="buscarUsuarios()">
-    Buscar Usuários
-  </button>
+    <button id="btnBuscar">
+        Buscar Usuários
+    </button>
 
-  <!-- Lista onde os dados aparecerão -->
-  <ul id="listaUsuarios"></ul>
+    <div id="usuarios"></div>
 
-  <!-- Conecta o JavaScript -->
-  <script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>

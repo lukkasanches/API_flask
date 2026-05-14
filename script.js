@@ -3,7 +3,7 @@ async function buscarUsuarios() {
 
   // Faz a requisição para a API
   const resposta = await fetch(
-    "https://jsonplaceholder.typicode.com/users"
+    "https://api-flask-1-28rw.onrender.com"
   );
 
   // Converte a resposta para JSON

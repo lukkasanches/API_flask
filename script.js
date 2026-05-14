@@ -1,32 +1,38 @@
-// Função assíncrona
-async function buscarUsuarios() {
+const botao = document.getElementById("btnBuscar");
 
-  // Faz a requisição para a API
-  const resposta = await fetch(
-    "https://api-flask-1-28rw.onrender.com"
-  );
+const divUsuarios = document.getElementById("usuarios");
 
-  // Converte a resposta para JSON
-  const usuarios = await resposta.json();
+botao.addEventListener("click", buscarUsuarios);
 
-  // Pega a lista do HTML
-  const lista = document.getElementById(
-    "listaUsuarios"
-  );
+function buscarUsuarios() {
 
-  // Limpa a lista antes de adicionar novos itens
-  lista.innerHTML = "";
+    fetch("http://127.0.0.1:5000/usuarios")
 
-  // Percorre todos os usuários
-  usuarios.forEach(usuario => {
+        .then(response => response.json())
 
-    // Adiciona cada usuário na lista
-    lista.innerHTML += `
-      <li>
-        ${usuario.name}
-      </li>
-    `;
+        .then(dados => {
 
-  });
+            divUsuarios.innerHTML = "";
 
+            dados.forEach(usuario => {
+
+                const div = document.createElement("div");
+
+                div.classList.add("usuario");
+
+                div.innerHTML = `
+                    <h3>${usuario.nome}</h3>
+                    <p>Email: ${usuario.email}</p>
+                    <p>Telefone: ${usuario.telefone}</p>
+                `;
+
+                divUsuarios.appendChild(div);
+
+            });
+
+        })
+
+        .catch(error => {
+            console.log(error);
+        });
 }

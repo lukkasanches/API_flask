@@ -1,19 +1,23 @@
 body {
-
   font-family: Arial;
+  background: #f4f4f4;
   padding: 20px;
+}
 
+h1 {
+  color: #333;
 }
 
 button {
-
-  padding: 10px;
+  background: blue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
   cursor: pointer;
-
 }
 
-li {
-
-  margin: 10px 0;
-
+.usuario {
+  background: white;
+  padding: 10px;
+  margin-top: 10px;
 }

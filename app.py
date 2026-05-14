@@ -1,9 +1,8 @@
-from flask import Flask
-from flask import jsonify
-from flask_cors import CORS 
+from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
-CORS (app) 
+CORS(app)
 
 usuarios = [
     {
@@ -25,8 +24,7 @@ usuarios = [
     }
 ]
 
-
-@app.route('/usuarios', methods=['GET'])
+@app.route('/usuarios')
 def listar_usuarios():
     return jsonify(usuarios)
 
